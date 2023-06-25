@@ -1,4 +1,4 @@
-// SimpleDLL.cppge
+// SimpleDLL.cpp
 
 #include "Hoge.h"
 

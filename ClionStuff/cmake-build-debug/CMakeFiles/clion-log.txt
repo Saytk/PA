@@ -1,1 +1,0 @@
-dzzdCMakeLists.txt not found in C:\Users\ddans\CLionProjects\untitled4 Select CMakeLists.txt

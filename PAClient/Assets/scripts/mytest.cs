@@ -1,32 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 using System.Runtime.InteropServices;
+using UnityEngine;
 using fts;
 
-// Define the delegate type that matches the function signature in the C++ code
-public delegate int AddDelegate(int a, int b);
-
-// Define a class to hold the delegate instance
-[PluginAttr("libPAMLDLL")]
-public class MyPlugin
+[PluginAttr("DllTest")]
+public static class MyDll
 {
-    [PluginFunctionAttr("Add")]
-    public static AddDelegate Add;
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate float GetTraceDelegate();
+
+    [PluginFunctionAttr("getTrace")]
+    public static GetTraceDelegate getTrace;
 }
 
-
-public class mytest : MonoBehaviour
+public class MyTest : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(MyPlugin.Add(4, 5) + "a");
-    }
+        Debug.Log("Start method was called.");
 
-    // Update is called once per frame
-    void Update()
-    {
+        if (MyDll.getTrace == null)
+        {
+            Debug.LogError("Failed to load the DLL");
+            return;
+        }
 
+        Debug.Log("The trace value is: " + MyDll.getTrace());
     }
 }

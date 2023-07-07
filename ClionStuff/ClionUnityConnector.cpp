@@ -1,9 +1,21 @@
 // SimpleDLL.cpp
 
+#include <Eigen/Core>
 #include "ClionUnityConnector.h"
 
+class t {
+    public:
 
-int Add(int a, int b)
+    int a = 0 ;
+    int b = 0 ;
+
+};
+
+
+
+ int Add(int a, int b)
 {
-    return a * b + 7 ;
+     Eigen::VectorXd x(2);
+    return  a;
+
 }

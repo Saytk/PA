@@ -1,5 +1,10 @@
-//
-// Created by erwan on 02/07/2023.
-//
+#define EXPORT_API __declspec(dllexport)
+#include <Eigen/Dense>
+using namespace Eigen;
 
-#include "test.h"
+extern "C" {
+EXPORT_API float getTrace() {
+    MatrixXf m = MatrixXf::Random(4,4);
+    return m.trace();
+}
+}

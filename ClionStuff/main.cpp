@@ -1,5 +1,4 @@
 #include "MultLayerPerceptron.h"
-#include <Eigen/Dense>
 #include <iostream>
 #include <vector>
 
@@ -24,6 +23,8 @@ int main() {
 
     // create a multilayer perceptron with 2 inputs, 1 output, 2 hidden layers, and 5 neurons per hidden layer
     MultLayerPerceptron mlp(2, 1, 2, 5, 0.01, "tanh");
+
+
 
     // train the MLP with the dataset
     for (int i = 0; i < 10000; i++) {

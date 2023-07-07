@@ -1,10 +1,10 @@
 #ifndef PROJET_ANNUEL_MULTLAYERPERCEPTRON_H
 #define PROJET_ANNUEL_MULTLAYERPERCEPTRON_H
 
-#include <Eigen/Dense>
 #include <map>
 #include <functional>
 #include <vector>
+#include <Eigen/Core>
 
 using namespace std;
 

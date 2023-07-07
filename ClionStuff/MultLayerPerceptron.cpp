@@ -1,5 +1,5 @@
 #include "MultLayerPerceptron.h"
-
+#include <Eigen/Dense>
 Layer::Layer(int num_inputs, int num_outputs,
              function<Eigen::VectorXd(Eigen::VectorXd)> activation,
              function<Eigen::VectorXd(Eigen::VectorXd)> activation_derivative)

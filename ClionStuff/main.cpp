@@ -92,6 +92,8 @@ int main() {
         for (int i = 0; i < predictions.size(); i++) {
             std::cout << "Point (" << X_test(i, 0) << ", " << X_test(i, 1) << ") : Classe prédite = " << predictions[i] << ", Classe réelle = " << y_test[i] << std::endl;
         }
+	   //affichage de la fonction linéaire résultante au modèle
+        std::cout << "y = (" << (model.w[0] / model.w[1])*-1 << ")x + (" <<(model.b / model.w[1])*-1 << ")" << std::endl;
 
         //endregion
 

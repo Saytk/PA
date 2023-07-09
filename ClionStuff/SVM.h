@@ -5,7 +5,7 @@
 #include <vector>
 
 class SVM {
-private:
+public:
     double learning_rate;
     double lambda_param;
     int n_iters;
@@ -19,7 +19,7 @@ private:
     void _get_gradients(bool constrain, const Eigen::VectorXd& x, int idx, Eigen::VectorXd& dw, double& db);
     void _update_weights_bias(const Eigen::VectorXd& dw, double db);
 
-public:
+
     SVM(double learning_rate = 1e-3, double lambda_param = 1e-2, int n_iters = 1000);
     void fit(const Eigen::MatrixXd& X, const std::vector<int>& y);
     std::vector<int> predict(const Eigen::MatrixXd& X);

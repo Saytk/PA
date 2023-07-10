@@ -102,16 +102,16 @@ int main() {
     if(true){
         //RBF
         std::vector<double> X = {1.0, 2.0, 3.0, 4.0, 5.0};
-        std::vector<double> y = {2.0, 4.0, 6.0, 8.0, 10.0};
+        std::vector<double> y = {1.0, 2.0, 3.0, 4.0, 5.0};
 
         // Création d'une instance de la classe RBF
-        RBF rbf(1, 0.1, 1000, true);
+        RBF rbf(4, 0.01, 10000, true);
 
         // Entraînement du modèle RBF
         rbf.fit(X, y);
 
         // Prédiction sur de nouvelles données
-        std::vector<double> X_test = {6.0, 7.0, 8.0};
+        std::vector<double> X_test = {.6, 2.5, 3.8};
         std::vector<double> y_pred = rbf.predict(X);
 
         // Affichage des prédictions
